@@ -8,11 +8,6 @@ SRCS_DIR := ./src
 CC = clang
 CFLAGS = -std=gnu11 -Wall -pedantic -O3
 
-# Debug
-CFLAGS  += -g
-CFLAGS  += -fsanitize=address
-LDFLAGS += -fsanitize=address
-
 MAIN_FILE := $(SRCS_DIR)/main
 SRCS := $(filter-out $(MAIN_FILE).c, $(wildcard $(SRCS_DIR)/*.c))
 OBJS := $(SRCS:%.c=$(BUILD_DIR)/%.o)
